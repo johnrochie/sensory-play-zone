@@ -1,76 +1,79 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Sparkles, ArrowRight } from "lucide-react";
-
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-24 pb-16 px-4 sm:px-6 overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-20 right-10 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
-      <div className="absolute bottom-20 left-10 w-32 h-32 bg-secondary/30 rounded-full blur-2xl" />
-      <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-accent/20 rounded-full blur-xl" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-pink-400 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-400 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-400 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+      </div>
 
-      <div className="flex-1 max-w-2xl animate-fade-in-up">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold text-sm mb-6">
-          <Sparkles size={18} />
-          Where play meets development
+      {/* Main content */}
+      <div className="relative z-10 text-center max-w-5xl mx-auto">
+        {/* Logo as the hero - large, beautiful, centered */}
+        <div className="mb-12 animate-fade-in-up">
+          <div className="relative inline-block">
+            <div className="absolute -inset-4 bg-gradient-to-br from-pink-400 via-yellow-400 to-cyan-400 rounded-full blur-2xl opacity-30 animate-pulse" />
+            <img
+              src="/logo.jpg"
+              alt="Sensory Play Zone Logo"
+              width={300}
+              height={300}
+              className="relative rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500"
+            />
+          </div>
         </div>
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-          Amazing sensory play,
-          <br />
-          <span className="text-primary">messy fun</span> for little explorers
+
+        {/* Headline */}
+        <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          Sensory Play Zone
         </h1>
-        <p className="text-lg text-muted mb-8 max-w-xl">
-          Sand, water, paint, light & music — our premium play zones help kids
-          learn through discovery. Safe, supervised, and endlessly fun.
+
+        <p className="text-2xl md:text-3xl text-gray-500 mb-8 animate-fade-in-up max-w-3xl mx-auto" style={{ animationDelay: "0.4s" }}>
+          Where Magic Meets Messy Play
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="#book"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-semibold text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
-          >
-            Book a Session
-            <ArrowRight size={20} />
-          </Link>
-          <Link
-            href="#activities"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-full font-semibold hover:bg-secondary/90 transition-all"
-          >
-            Explore Zones
-          </Link>
+
+        {/* Tagline */}
+        <p className="text-xl text-gray-400 mb-12 animate-fade-in-up max-w-2xl mx-auto" style={{ animationDelay: "0.6s" }}>
+          Discover a world of sensory exploration designed to spark curiosity and creativity in every child
+        </p>
+
+        {/* CTA Button - logo-inspired design */}
+        <div className="flex gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+          <button className="px-8 py-4 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold rounded-2xl text-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
+            Book Your Session
+          </button>
+          <button className="px-8 py-4 bg-white text-gray-800 font-bold rounded-2xl text-lg border-2 border-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300">
+            Learn More
+          </button>
+        </div>
+
+        {/* Feature highlights */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up" style={{ animationDelay: "1s" }}>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-pink-400/20 hover:-translate-y-2 transition-transform">
+            <div className="text-4xl mb-3">🌈</div>
+            <h3 className="font-bold text-xl mb-2">Colorful Zones</h3>
+            <p className="text-gray-500 text-sm">Sand, water, art, light, music & texture experiences</p>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-yellow-400/20 hover:-translate-y-2 transition-transform">
+            <div className="text-4xl mb-3">🎨</div>
+            <h3 className="font-bold text-xl mb-2">Creative Play</h3>
+            <p className="text-gray-500 text-sm">Messy art stations and sensory exploration</p>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-cyan-400/20 hover:-translate-y-2 transition-transform">
+            <div className="text-4xl mb-3">👶</div>
+            <h3 className="font-bold text-xl mb-2">All Ages Welcome</h3>
+            <p className="text-gray-500 text-sm">Sessions for ages 0-8 years</p>
+          </div>
         </div>
       </div>
 
-      <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
-        <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
-          <div className="col-span-2 sm:col-span-1 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl animate-fade-in-up [animation-delay:0.1s] opacity-0 [animation-fill-mode:forwards]">
-            <Image
-              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
-              alt="Children playing with sensory materials"
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, 50vw"
-              priority
-            />
-          </div>
-          <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl animate-fade-in-up [animation-delay:0.2s] opacity-0 [animation-fill-mode:forwards]">
-            <Image
-              src="https://images.unsplash.com/photo-1587654780291-39c9414d2d38?w=400&q=80"
-              alt="Kids artistic messy play"
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 50vw, 25vw"
-            />
-          </div>
-          <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl animate-fade-in-up [animation-delay:0.3s] opacity-0 [animation-fill-mode:forwards]">
-            <Image
-              src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80"
-              alt="Child enjoying water play"
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 50vw, 25vw"
-            />
-          </div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-400/40 rounded-full flex justify-center pt-2">
+          <div className="w-1.5 h-3 bg-gray-400/60 rounded-full" />
         </div>
       </div>
     </section>
