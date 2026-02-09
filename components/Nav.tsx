@@ -1,88 +1,49 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#activities", label: "Activities" },
-  { href: "#sessions", label: "Sessions" },
-  { href: "#age-groups", label: "Age Groups" },
-  { href: "#testimonials", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
-];
 
 export default function Nav() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
-        <Link href="#" className="flex items-center gap-2">
-          <Image
-            src="/logo.jpg"
-            alt="Sensory Play Zone"
-            width={44}
-            height={44}
-            className="rounded-lg object-cover"
-          />
-          <span className="font-display text-xl sm:text-2xl font-semibold text-foreground">
-            Sensory Play Zone
-          </span>
-        </Link>
-
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="#book"
-            className="px-5 py-2.5 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all hover:scale-105"
-          >
-            Book a Session
-          </Link>
-        </div>
-
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-foreground"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {open && (
-        <div className="md:hidden bg-background border-t border-border py-4 px-4 animate-fade-in-up">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="text-foreground font-medium hover:text-primary"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="#book"
-              onClick={() => setOpen(false)}
-              className="block text-center px-5 py-3 bg-primary text-white rounded-full font-semibold mt-2"
-            >
-              Book a Session
-            </Link>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b-2 border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo in navbar */}
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-br from-pink-400 to-yellow-400 rounded-full blur-sm opacity-50" />
+              <Image
+                src="/logo.jpg"
+                alt="Sensory Play Zone"
+                width={50}
+                height={50}
+                className="relative rounded-xl shadow-lg"
+              />
+            </div>
+            <span className="font-display font-bold text-xl hidden sm:block bg-gradient-to-r from-pink-400 via-yellow-400 to-cyan-400 bg-clip-text text-transparent">
+              Sensory Play Zone
+            </span>
           </div>
+
+          {/* Navigation Links */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#about" className="text-gray-800 hover:text-pink-400 font-medium transition-colors">
+              About
+            </a>
+            <a href="#activities" className="text-gray-800 hover:text-yellow-400 font-medium transition-colors">
+              Activities
+            </a>
+            <a href="#sessions" className="text-gray-800 hover:text-cyan-400 font-medium transition-colors">
+              Sessions
+            </a>
+            <a href="#contact" className="text-gray-800 hover:text-purple-400 font-medium transition-colors">
+              Contact
+            </a>
+          </div>
+
+          {/* CTA Button */}
+          <button className="px-6 py-2 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg">
+            Book Now
+          </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

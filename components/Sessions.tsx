@@ -1,113 +1,125 @@
-import { Calendar, PartyPopper, Users, Baby } from "lucide-react";
-import Link from "next/link";
-
-const plans = [
-  {
-    icon: Calendar,
-    title: "Drop-in sessions",
-    price: "£12",
-    period: "per child",
-    description: "Flexible 90-minute sessions. Book when it suits you.",
-    features: ["Open play in all zones", "Supervised by trained staff", "No commitment"],
-    popular: false,
-  },
-  {
-    icon: Calendar,
-    title: "Term time",
-    price: "£45",
-    period: "per month",
-    description: "Weekly sessions throughout the school term. Best value.",
-    features: ["Same day & time each week", "10% off parties & workshops", "Priority booking"],
-    popular: true,
-  },
-  {
-    icon: PartyPopper,
-    title: "Birthday parties",
-    price: "£180",
-    period: "for up to 12 kids",
-    description: "Private hire, themed setup, and party bags included.",
-    features: ["2-hour private zone hire", "Themed decorations", "Party host included"],
-    popular: false,
-  },
-  {
-    icon: Users,
-    title: "Parent & child",
-    price: "£18",
-    period: "per session",
-    description: "Guided parent-child sessions for 1–3 year olds.",
-    features: ["Bonding through play", "Tips to take home", "Small groups"],
-    popular: false,
-  },
-];
-
 export default function Sessions() {
+  const sessions = [
+    {
+      name: "Drop-In Session",
+      price: "£12",
+      duration: "90 minutes",
+      description: "Flexible play time for one child",
+      features: ["Access to all 5 zones", "Supervised play", "Parent-friendly seating", "Clean & safe environment"],
+      popular: false,
+      color: "from-gray-100/50 to-gray-100/20",
+      borderColor: "border-gray-200/40",
+    },
+    {
+      name: "Term Time Pass",
+      price: "£45",
+      duration: "Per Month",
+      description: "Unlimited weekly sessions",
+      features: ["Up to 4 sessions per week", "Priority booking", "Discounted party packages", "Parent & child sessions included"],
+      popular: true,
+      color: "from-pink-400/20 to-pink-400/10",
+      borderColor: "border-pink-400/40",
+    },
+    {
+      name: "Birthday Party",
+      price: "£180",
+      duration: "2 hours",
+      description: "Private party for 12 kids",
+      features: ["Exclusive access to venue", "Dedicated party host", "Party decorations included", "Food & drink packages available"],
+      popular: false,
+      color: "from-yellow-400/20 to-yellow-400/10",
+      borderColor: "border-yellow-400/40",
+    },
+    {
+      name: "Parent & Child",
+      price: "£18",
+      duration: "Per Session",
+      description: "For ages 1-3 years",
+      features: ["Guided sensory play", "Bonding activities", "Take-home activity ideas", "Small group sessions"],
+      popular: false,
+      color: "from-cyan-400/20 to-cyan-400/10",
+      borderColor: "border-cyan-400/40",
+    },
+  ];
+
   return (
-    <section id="sessions" className="py-16 sm:py-24 px-4 sm:px-6 bg-white/50">
-      <div className="max-w-6xl mx-auto">
+    <section id="sessions" className="relative py-24 px-4 overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-20 right-40 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-40 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Sessions & pricing
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-yellow-400 to-cyan-400 bg-clip-text text-transparent">
+            Session Pricing
           </h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
-            Choose the option that fits your family. All sessions are supervised
-            and age-appropriate.
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
+            Flexible options to fit every family's schedule and budget
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {plans.map((plan) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {sessions.map((session, index) => (
             <div
-              key={plan.title}
-              className={`relative rounded-2xl border-2 p-6 ${
-                plan.popular
-                  ? "border-primary bg-primary/5"
-                  : "border-border bg-background"
-              } hover:shadow-lg transition-shadow`}
+              key={index}
+              className={`bg-gradient-to-br ${session.color} rounded-3xl p-8 border-2 ${session.borderColor} relative hover:-translate-y-2 transition-all duration-300 ${
+                session.popular ? "lg:scale-105 shadow-2xl" : "shadow-xl"
+              }`}
             >
-              {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full">
-                  Most popular
-                </span>
+              {session.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="px-4 py-1 bg-gradient-to-r from-pink-400 to-yellow-400 text-white text-sm font-bold rounded-full shadow-lg">
+                    Most Popular
+                  </span>
+                </div>
               )}
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                <plan.icon size={20} />
+
+              <div className="text-center mb-6">
+                <h3 className="font-display text-2xl font-bold mb-2">{session.name}</h3>
+                <div className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                  {session.price}
+                </div>
+                <div className="text-gray-600 font-medium">{session.duration}</div>
               </div>
-              <h3 className="font-semibold text-lg text-foreground mb-1">
-                {plan.title}
-              </h3>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="font-display text-3xl font-bold text-foreground">
-                  {plan.price}
-                </span>
-                <span className="text-muted text-sm">{plan.period}</span>
-              </div>
-              <p className="text-muted text-sm mb-4">{plan.description}</p>
-              <ul className="space-y-2 mb-6">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {f}
+
+              <p className="text-center text-gray-500 mb-6">{session.description}</p>
+
+              <ul className="space-y-3 mb-8">
+                {session.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-pink-400 to-yellow-400 flex-shrink-0 flex items-center justify-center mt-0.5">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <Link
-                href="#book"
-                className={`block text-center py-3 rounded-full font-semibold transition-all ${
-                  plan.popular
-                    ? "bg-primary text-white hover:bg-primary/90"
-                    : "bg-secondary text-foreground hover:bg-secondary/90"
+
+              <button
+                className={`w-full py-3 rounded-xl font-bold transition-all duration-300 ${
+                  session.popular
+                    ? "bg-gradient-to-r from-pink-400 to-yellow-400 text-white hover:scale-105 shadow-lg"
+                    : "bg-white border-2 border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white"
                 }`}
               >
-                Book now
-              </Link>
+                {session.popular ? "Get Started" : "Book Now"}
+              </button>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-muted mt-8 text-sm">
-          Holiday sessions and workshops available — check our calendar or get in
-          touch.
-        </p>
+        {/* Extra Info */}
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full shadow-lg">
+            <span className="text-2xl">🎉</span>
+            <span className="font-medium">
+              First session HALF PRICE when you book online!{" "}
+              <a href="#contact" className="text-pink-400 font-bold hover:underline">
+                Book Now →
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

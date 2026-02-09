@@ -1,64 +1,69 @@
-import { Star, Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "Sarah M.",
-    role: "Mum of two",
-    rating: 5,
-    text: "My kids absolutely love it here. The staff are so patient and the zones are always spotless. Best sensory play we've found — worth every penny.",
-  },
-  {
-    name: "James & Emma",
-    role: "Parents of Leo, 3",
-    rating: 5,
-    text: "Leo has sensory processing differences and this place has been a game-changer. He's more confident and sleeps better after sessions. Can't recommend enough.",
-  },
-  {
-    name: "Priya K.",
-    role: "Mum of Aria",
-    rating: 5,
-    text: "Booked a birthday party and it was flawless. The kids had a blast, the setup was beautiful, and we didn't have to lift a finger. Will definitely be back.",
-  },
-];
-
 export default function Testimonials() {
+  const testimonials = [
+    {
+      name: "Sarah M.",
+      location: "Local Mom",
+      rating: 5,
+      quote: "My daughter absolutely loves it here! She's developed so much confidence and her creativity has blossomed. The staff are amazing with the kids.",
+      color: "from-pink-400/30 to-pink-400/5",
+    },
+    {
+      name: "James T.",
+      location: "Father of 2",
+      rating: 5,
+      quote: "Best birthday party venue we've ever used! The kids were engaged for hours and the staff made everything so easy. Highly recommend!",
+      color: "from-yellow-400/30 to-yellow-400/5",
+    },
+    {
+      name: "Emily R.",
+      location: "Childcare Professional",
+      rating: 5,
+      quote: "As a nursery teacher, I'm impressed by the quality of sensory experiences offered. It's educational, safe, and incredibly well-organized.",
+      color: "from-cyan-400/30 to-cyan-400/5",
+    },
+  ];
+
   return (
-    <section id="testimonials" className="py-16 sm:py-24 px-4 sm:px-6 bg-white/50">
-      <div className="max-w-6xl mx-auto">
+    <section id="testimonials" className="relative py-24 px-4 overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-400/10 via-yellow-400/5 to-cyan-400/10" />
+      <div className="absolute top-40 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            What parents say
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-yellow-400 to-cyan-400 bg-clip-text text-transparent">
+            What Families Say
           </h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
-            Trusted by hundreds of families. Here&apos;s what they&apos;re
-            saying.
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
+            Hear from parents and children who love Sensory Play Zone
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {testimonials.map((testimonial, index) => (
             <div
-              key={t.name}
-              className="relative rounded-2xl border border-border bg-background p-6 sm:p-8"
+              key={index}
+              className={`bg-gradient-to-br ${testimonial.color} rounded-3xl p-8 border-2 border-white/40 shadow-xl hover:-translate-y-2 transition-all duration-300`}
             >
-              <Quote
-                className="absolute top-4 right-4 text-primary/20"
-                size={32}
-              />
               <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    size={20}
-                    className="fill-secondary text-secondary"
-                  />
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <span key={i} className="text-2xl">⭐</span>
                 ))}
               </div>
-              <p className="text-foreground mb-6 italic">&ldquo;{t.text}&rdquo;</p>
+              <p className="text-lg leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
               <div>
-                <p className="font-semibold text-foreground">{t.name}</p>
-                <p className="text-sm text-muted">{t.role}</p>
+                <div className="font-bold font-display text-lg">{testimonial.name}</div>
+                <div className="text-gray-600 text-sm">{testimonial.location}</div>
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Trust Badges */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          {["✅ Fully Insured", "✅ DBS Checked Staff", "✅ OFSTED Compliant", "✅ COVID Secure"].map((badge, index) => (
+            <div key={index} className="px-5 py-2.5 bg-white rounded-full shadow-lg font-bold text-sm hover:-translate-y-1 transition-transform cursor-default">
+              {badge}
             </div>
           ))}
         </div>

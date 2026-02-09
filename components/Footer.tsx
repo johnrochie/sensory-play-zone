@@ -1,68 +1,84 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Facebook, Instagram, Twitter } from "lucide-react";
-
-const footerLinks = [
-  { href: "#about", label: "About" },
-  { href: "#activities", label: "Activities" },
-  { href: "#sessions", label: "Sessions" },
-  { href: "#age-groups", label: "Age Groups" },
-  { href: "#testimonials", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
-];
-
-const social = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-];
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-white py-12 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
-          <Link href="#" className="flex items-center gap-2">
-            <Image
-              src="/logo.jpg"
-              alt="Sensory Play Zone"
-              width={40}
-              height={40}
-              className="rounded-lg object-cover"
-            />
-            <span className="font-display text-xl font-semibold">
-              Sensory Play Zone
-            </span>
-          </Link>
+    <footer className="bg-gray-900 text-gray-300 py-16 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          {/* Logo & About */}
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-br from-pink-400 to-yellow-400 rounded-full blur-sm opacity-50" />
+                <Image
+                  src="/logo.jpg"
+                  alt="Sensory Play Zone"
+                  width={60}
+                  height={60}
+                  className="relative rounded-xl"
+                />
+              </div>
+              <span className="font-display font-bold text-2xl text-white">
+                Sensory Play Zone
+              </span>
+            </div>
+            <p className="text-gray-400 leading-relaxed mb-6">
+              A magical space where children explore, create, and discover through sensory experiences.
+              We believe every child deserves to learn through play in a safe, nurturing environment.
+            </p>
+            <div className="flex gap-4">
+              {["📘", "📸", "🐦", "▶️"].map((icon, index) => (
+                <div
+                  key={index}
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-xl hover:scale-110 hover:bg-white/20 transition-all cursor-pointer"
+                >
+                  {icon}
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <nav className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-white/80 hover:text-white transition-colors text-sm"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-display font-bold text-xl mb-6 text-white">Quick Links</h3>
+            <ul className="space-y-3">
+              {[
+                { label: "About Us", href: "#about" },
+                { label: "Our Activities", href: "#activities" },
+                { label: "Session Pricing", href: "#sessions" },
+                { label: "Age Groups", href: "#age-groups" },
+                { label: "Contact Us", href: "#contact" },
+              ].map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="text-gray-400 hover:text-pink-400 transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <div className="flex gap-4">
-            {social.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors"
-              >
-                <s.icon size={18} />
-              </a>
-            ))}
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-display font-bold text-xl mb-6 text-white">Contact</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>📍 45 High Street, Townsville</li>
+              <li>📞 01234 567 890</li>
+              <li>📧 hello@sensoryplayzone.com</li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/20 text-center text-sm text-white/60">
-          <p>© {new Date().getFullYear()} Sensory Play Zone. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-gray-500 text-sm">
+            © 2024 Sensory Play Zone. All rights reserved.
+          </div>
+          <div className="flex gap-6 text-sm text-gray-500">
+            <a href="#" className="hover:text-pink-400 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">Cookie Policy</a>
+          </div>
         </div>
       </div>
     </footer>

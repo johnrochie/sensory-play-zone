@@ -1,72 +1,74 @@
-import { Baby, Smile, Sparkles } from "lucide-react";
-
-const ageGroups = [
-  {
-    icon: Baby,
-    ages: "1–2 years",
-    title: "Toddlers",
-    description: "Soft textures, gentle sounds, water play, and supervised exploration. Parent participation welcome.",
-    activities: ["Water tables", "Soft play textures", "Bubble stations", "Parent & child sessions"],
-  },
-  {
-    icon: Smile,
-    ages: "2–4 years",
-    title: "Preschoolers",
-    description: "Sand, paint, slime, and music. More independence with staff on hand to guide and support.",
-    activities: ["Sand & water zone", "Art & messy zone", "Music & sound", "Light & sensory"],
-  },
-  {
-    icon: Sparkles,
-    ages: "4–7 years",
-    title: "Little explorers",
-    description: "Full access to all zones. Creative projects, messy science, and collaborative play.",
-    activities: ["All zones", "Themed workshops", "Birthday parties", "Drop-in or term"],
-  },
-];
-
 export default function AgeGroups() {
+  const ageGroups = [
+    {
+      age: "0-1 Years",
+      title: "Baby Explorers",
+      description: "Gentle sensory stimulation for our youngest visitors. Soft textures, calming lights, and age-appropriate activities.",
+      color: "from-cyan-400/20 to-cyan-400/5",
+      icon: "👶",
+    },
+    {
+      age: "1-3 Years",
+      title: "Tiny Discoverers",
+      description: "Interactive play focusing on motor skills and sensory awareness. Parent-guided activities in a safe environment.",
+      color: "from-pink-400/20 to-pink-400/5",
+      icon: "🧸",
+    },
+    {
+      age: "3-5 Years",
+      title: "Little Creators",
+      description: "Creative expression through messy art and sensory exploration. Building confidence and social skills.",
+      color: "from-yellow-400/20 to-yellow-400/5",
+      icon: "🎨",
+    },
+    {
+      age: "5-8 Years",
+      title: "Big Thinkers",
+      description: "Advanced sensory challenges and collaborative play. Learning through experimentation and creativity.",
+      color: "from-purple-400/20 to-purple-400/5",
+      icon: "🧩",
+    },
+  ];
+
   return (
-    <section id="age-groups" className="py-16 sm:py-24 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="age-groups" className="relative py-24 px-4 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-cyan-400/5 to-gray-50" />
+      <div className="absolute top-60 left-20 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-60 right-20 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Age groups
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-cyan-400 to-pink-400 bg-clip-text text-transparent">
+            Programs by Age
           </h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
-            Every zone is designed for safe, age-appropriate play. Find the right
-            fit for your child.
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
+            Tailored experiences designed for every stage of childhood development
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-8">
-          {ageGroups.map((group) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {ageGroups.map((group, index) => (
             <div
-              key={group.ages}
-              className="rounded-2xl border border-border bg-background p-6 sm:p-8 hover:border-primary/30 transition-colors"
+              key={index}
+              className={`bg-gradient-to-br ${group.color} rounded-3xl p-8 border-2 border-white/30 shadow-xl hover:-translate-y-2 transition-all duration-300 text-center`}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
-                <group.icon size={28} />
-              </div>
-              <span className="text-primary font-semibold text-sm">
-                {group.ages}
-              </span>
-              <h3 className="font-display text-xl font-bold text-foreground mt-1 mb-3">
-                {group.title}
-              </h3>
-              <p className="text-muted mb-6">{group.description}</p>
-              <h4 className="font-semibold text-foreground mb-2">
-                Activities include
-              </h4>
-              <ul className="space-y-2">
-                {group.activities.map((a) => (
-                  <li key={a} className="flex items-center gap-2 text-sm text-muted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {a}
-                  </li>
-                ))}
-              </ul>
+              <div className="text-6xl mb-4">{group.icon}</div>
+              <div className="text-sm font-bold text-pink-400 mb-2">{group.age}</div>
+              <h3 className="font-display text-2xl font-bold mb-3">{group.title}</h3>
+              <p className="text-gray-500 leading-relaxed">{group.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Bottom Banner */}
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-3 px-8 py-4 bg-white rounded-2xl shadow-lg">
+            <span className="text-3xl">💝</span>
+            <span className="font-bold text-lg">
+              Age-appropriate supervision always provided. Parents welcome to play!
+            </span>
+          </div>
         </div>
       </div>
     </section>
