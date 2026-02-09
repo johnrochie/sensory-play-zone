@@ -24,9 +24,9 @@ export default function Contact() {
             <div>
               <h3 className="font-display text-2xl font-bold mb-4">Location</h3>
               <p className="text-gray-500 leading-relaxed mb-4">
-                45 High Street<br />
-                Townsville, AB1 2CD<br />
-                United Kingdom
+                Boyles of Ballyseedy<br />
+                Tralee, Co Kerry<br />
+                Ireland
               </p>
               <div className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-lg text-sm font-bold text-gray-600">
                 Free parking available on site
@@ -38,7 +38,7 @@ export default function Contact() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">📞</span>
-                  <span className="font-bold">01234 567 890</span>
+                  <span className="font-bold">066 719 1234</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">📧</span>
@@ -115,7 +115,7 @@ export default function Contact() {
                 <input
                   type="tel"
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-400 focus:outline-none transition-colors"
-                  placeholder="07123 456 789"
+                  placeholder="086 123 4567"
                 />
               </div>
 
@@ -123,10 +123,10 @@ export default function Contact() {
                 <label className="block font-bold mb-2">Session Type</label>
                 <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-400 focus:outline-none transition-colors bg-white">
                   <option value="">Select a session</option>
-                  <option value="drop-in">Drop-In Session - £12</option>
-                  <option value="term">Term Time Pass - £45/month</option>
-                  <option value="party">Birthday Party - £180</option>
-                  <option value="parent-child">Parent & Child - £18</option>
+                  <option value="drop-in">Drop-In Session - €12</option>
+                  <option value="term">Term Time Pass - €45/month</option>
+                  <option value="party">Birthday Party - €180</option>
+                  <option value="parent-child">Parent & Child - €18</option>
                 </select>
               </div>
 

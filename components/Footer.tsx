@@ -62,8 +62,8 @@ export default function Footer() {
           <div>
             <h3 className="font-display font-bold text-xl mb-6 text-white">Contact</h3>
             <ul className="space-y-3 text-gray-400">
-              <li>📍 45 High Street, Townsville</li>
-              <li>📞 01234 567 890</li>
+              <li>📍 Boyles of Ballyseedy, Tralee, Co Kerry</li>
+              <li>📞 066 719 1234</li>
               <li>📧 hello@bambinos.com</li>
             </ul>
           </div>
@@ -77,7 +77,7 @@ export default function Footer() {
           <div className="flex gap-6 text-sm text-gray-500">
             <a href="#" className="hover:text-pink-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-pink-400 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-pink-400 transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-pink-400 transition-colors">CookiePolicy</a>
           </div>
         </div>
       </div>

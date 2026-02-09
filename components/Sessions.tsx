@@ -2,7 +2,7 @@ export default function Sessions() {
   const sessions = [
     {
       name: "Drop-In Session",
-      price: "£12",
+      price: "€12",
       duration: "90 minutes",
       description: "Flexible play time for one child",
       features: ["Access to all 5 zones", "Supervised play", "Parent-friendly seating", "Clean & safe environment"],
@@ -12,7 +12,7 @@ export default function Sessions() {
     },
     {
       name: "Term Time Pass",
-      price: "£45",
+      price: "€45",
       duration: "Per Month",
       description: "Unlimited weekly sessions",
       features: ["Up to 4 sessions per week", "Priority booking", "Discounted party packages", "Parent & child sessions included"],
@@ -22,7 +22,7 @@ export default function Sessions() {
     },
     {
       name: "Birthday Party",
-      price: "£180",
+      price: "€180",
       duration: "2 hours",
       description: "Private party for 12 kids",
       features: ["Exclusive access to venue", "Dedicated party host", "Party decorations included", "Food & drink packages available"],
@@ -32,7 +32,7 @@ export default function Sessions() {
     },
     {
       name: "Parent & Child",
-      price: "£18",
+      price: "€18",
       duration: "Per Session",
       description: "For ages 1-3 years",
       features: ["Guided sensory play", "Bonding activities", "Take-home activity ideas", "Small group sessions"],
