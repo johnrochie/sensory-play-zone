@@ -95,15 +95,16 @@ export default function Sessions() {
                 ))}
               </ul>
 
-              <button
-                className={`w-full py-3 rounded-xl font-bold transition-all duration-300 ${
+              <a
+                href="#contact"
+                className={`block w-full py-3 rounded-xl font-bold text-center transition-all duration-300 ${
                   session.popular
                     ? "bg-gradient-to-r from-pink-400 to-yellow-400 text-white hover:scale-105 shadow-lg"
                     : "bg-white border-2 border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white"
                 }`}
               >
                 {session.popular ? "Get Started" : "Book Now"}
-              </button>
+              </a>
             </div>
           ))}
         </div>

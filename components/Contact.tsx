@@ -1,6 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Contact() {
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowConfirm(true);
+    setTimeout(() => setShowConfirm(false), 5000);
+  };
+
   return (
     <section id="contact" className="relative py-24 px-4 overflow-hidden">
       {/* Background */}
@@ -36,14 +47,14 @@ export default function Contact() {
             <div>
               <h3 className="font-display text-2xl font-bold mb-4">Contact Details</h3>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
+                <a href="tel:0667191234" className="flex items-center gap-3 hover:text-pink-400 transition-colors">
                   <span className="text-2xl">📞</span>
                   <span className="font-bold">066 719 1234</span>
-                </div>
-                <div className="flex items-center gap-3">
+                </a>
+                <a href="mailto:hello@bambinos.com" className="flex items-center gap-3 hover:text-pink-400 transition-colors">
                   <span className="text-2xl">📧</span>
                   <span className="font-bold">hello@bambinos.com</span>
-                </div>
+                </a>
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">💬</span>
                   <span className="font-bold">Follow us @BambinosPlay</span>
@@ -89,15 +100,26 @@ export default function Contact() {
           </div>
 
           {/* Booking Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-2xl border-2 border-pink-400/20">
+          <div className="bg-white rounded-3xl p-8 shadow-2xl border-2 border-pink-400/20 relative">
+            {showConfirm && (
+              <div className="absolute inset-0 bg-white/95 rounded-3xl flex items-center justify-center z-10">
+                <div className="text-center">
+                  <div className="text-6xl mb-4">✅</div>
+                  <h3 className="font-display text-2xl font-bold mb-2">Thank You!</h3>
+                  <p className="text-gray-600">We'll confirm your booking within 24 hours</p>
+                </div>
+              </div>
+            )}
+
             <h3 className="font-display text-2xl font-bold mb-6 text-center">Book Your Session</h3>
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="block font-bold mb-2">Your Name</label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-400 focus:outline-none transition-colors"
                   placeholder="John Smith"
+                  required
                 />
               </div>
 
@@ -107,6 +129,7 @@ export default function Contact() {
                   type="email"
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-400 focus:outline-none transition-colors"
                   placeholder="john@example.com"
+                  required
                 />
               </div>
 
@@ -116,12 +139,13 @@ export default function Contact() {
                   type="tel"
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-400 focus:outline-none transition-colors"
                   placeholder="086 123 4567"
+                  required
                 />
               </div>
 
               <div>
                 <label className="block font-bold mb-2">Session Type</label>
-                <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-400 focus:outline-none transition-colors bg-white">
+                <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-pink-400 focus:outline-none transition-colors bg-white" required>
                   <option value="">Select a session</option>
                   <option value="drop-in">Drop-In Session - €12</option>
                   <option value="term">Term Time Pass - €45/month</option>

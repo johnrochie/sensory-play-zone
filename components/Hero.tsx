@@ -42,12 +42,18 @@ export default function Hero() {
 
         {/* CTA Button - logo-inspired design */}
         <div className="flex gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-          <button className="px-8 py-4 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold rounded-2xl text-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
+          <a
+            href="#contact"
+            className="px-8 py-4 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold rounded-2xl text-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
+          >
             Book Your Session
-          </button>
-          <button className="px-8 py-4 bg-white text-gray-800 font-bold rounded-2xl text-lg border-2 border-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300">
+          </a>
+          <a
+            href="#about"
+            className="px-8 py-4 bg-white text-gray-800 font-bold rounded-2xl text-lg border-2 border-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300"
+          >
             Learn More
-          </button>
+          </a>
         </div>
 
         {/* Feature highlights */}

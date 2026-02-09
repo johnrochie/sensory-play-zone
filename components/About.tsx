@@ -90,9 +90,12 @@ export default function About() {
               <p className="mb-6 font-medium">
                 First session? Come see why families love Bambinos
               </p>
-              <button className="px-8 py-3 bg-white text-pink-400 font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg">
+              <a
+                href="#contact"
+                className="px-8 py-3 bg-white text-pink-400 font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg inline-block"
+              >
                 Book Your Visit
-              </button>
+              </a>
             </div>
           </div>
         </div>

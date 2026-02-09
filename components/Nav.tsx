@@ -39,9 +39,12 @@ export default function Nav() {
           </div>
 
           {/* CTA Button */}
-          <button className="px-6 py-2 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg">
+          <a
+            href="#contact"
+            className="px-6 py-2 bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg"
+          >
             Book Now
-          </button>
+          </a>
         </div>
       </div>
     </nav>

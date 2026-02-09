@@ -63,14 +63,15 @@ export default function Activities() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {activities.map((activity, index) => (
-            <div
+            <a
               key={index}
+              href="#sessions"
               className={`bg-gradient-to-br ${activity.color} rounded-3xl p-8 border-2 ${activity.borderColor} hover:-translate-y-2 transition-all duration-300 cursor-pointer`}
             >
               <div className="text-6xl mb-4">{activity.icon}</div>
               <h3 className="font-display text-2xl font-bold mb-3">{activity.title}</h3>
               <p className="text-gray-500 leading-relaxed">{activity.description}</p>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -81,12 +82,18 @@ export default function Activities() {
             All zones are supervised by trained staff who ensure safe, mess-free fun for everyone!
           </p>
           <div className="flex gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-pink-400 font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg">
+            <a
+              href="#contact"
+              className="px-8 py-4 bg-white text-pink-400 font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg"
+            >
               Book a Session
-            </button>
-            <button className="px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition-all duration-300 border-2 border-white/30">
+            </a>
+            <a
+              href="#sessions"
+              className="px-8 py-4 bg-white/20 backdrop-blur text-white font-bold rounded-xl hover:bg-white/30 transition-all duration-300 border-2 border-white/30"
+            >
               View Schedule
-            </button>
+            </a>
           </div>
         </div>
       </div>
