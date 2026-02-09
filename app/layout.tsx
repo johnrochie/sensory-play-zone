@@ -15,9 +15,9 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
-  title: "Sensory Play Zone | Premium Kids Sensory & Messy Play",
-  description: "Discover the magic of sensory play. Sand, water, art, light, music & texture zones for children. Book sessions, parties & workshops. Trusted by parents.",
-  keywords: "sensory play, messy play, kids activities, children play center, sensory gym",
+  title: "Bambinos | Premium Kids Sensory & Messy Play Zone",
+  description: "Discover the magic of sensory play at Bambinos. Sand, water, art, light, music & texture zones for children. Book sessions, parties & workshops. Trusted by parents.",
+  keywords: "sensory play, messy play, kids activities, children play center, sensory gym, bambinos",
 };
 
 export default function RootLayout({

@@ -42,11 +42,11 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">📧</span>
-                  <span className="font-bold">hello@sensoryplayzone.com</span>
+                  <span className="font-bold">hello@bambinos.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">💬</span>
-                  <span className="font-bold">Follow us @SensoryPlayZone</span>
+                  <span className="font-bold">Follow us @BambinosPlay</span>
                 </div>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function Contact() {
                 <div className="absolute -inset-2 bg-gradient-to-br from-pink-400 to-cyan-400 rounded-full blur-md opacity-20" />
                 <Image
                   src="/logo.jpg"
-                  alt="Sensory Play Zone"
+                  alt="Bambinos"
                   width={100}
                   height={100}
                   className="relative rounded-2xl shadow-lg"

@@ -12,14 +12,14 @@ export default function Footer() {
                 <div className="absolute -inset-1 bg-gradient-to-br from-pink-400 to-yellow-400 rounded-full blur-sm opacity-50" />
                 <Image
                   src="/logo.jpg"
-                  alt="Sensory Play Zone"
+                  alt="Bambinos"
                   width={60}
                   height={60}
                   className="relative rounded-xl"
                 />
               </div>
               <span className="font-display font-bold text-2xl text-white">
-                Sensory Play Zone
+                Bambinos
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
@@ -64,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li>📍 45 High Street, Townsville</li>
               <li>📞 01234 567 890</li>
-              <li>📧 hello@sensoryplayzone.com</li>
+              <li>📧 hello@bambinos.com</li>
             </ul>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-gray-500 text-sm">
-            © 2024 Sensory Play Zone. All rights reserved.
+            © 2024 Bambinos. All rights reserved.
           </div>
           <div className="flex gap-6 text-sm text-gray-500">
             <a href="#" className="hover:text-pink-400 transition-colors">Privacy Policy</a>

@@ -10,7 +10,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-yellow-400 to-cyan-400 bg-clip-text text-transparent">
-            About Sensory Play Zone
+            About Bambinos
           </h2>
           <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             A magical space where children explore, create, and discover through sensory experiences
@@ -57,7 +57,7 @@ export default function About() {
               <div className="absolute -inset-4 bg-gradient-to-br from-pink-400 via-yellow-400 to-cyan-400 rounded-full blur-2xl opacity-20 animate-pulse" />
               <Image
                 src="/logo.jpg"
-                alt="Sensory Play Zone"
+                alt="Bambinos"
                 width={250}
                 height={250}
                 className="relative rounded-3xl shadow-2xl"
@@ -88,7 +88,7 @@ export default function About() {
             <div className="mt-8 bg-gradient-to-r from-pink-400 via-yellow-400 to-cyan-400 rounded-3xl p-8 text-center text-white shadow-2xl">
               <h3 className="font-display text-3xl font-bold mb-3">Join Our Play Family!</h3>
               <p className="mb-6 font-medium">
-                First session? Come see why families love us
+                First session? Come see why families love Bambinos
               </p>
               <button className="px-8 py-3 bg-white text-pink-400 font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg">
                 Book Your Visit

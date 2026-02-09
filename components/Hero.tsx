@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
@@ -16,7 +18,7 @@ export default function Hero() {
             <div className="absolute -inset-4 bg-gradient-to-br from-pink-400 via-yellow-400 to-cyan-400 rounded-full blur-2xl opacity-30 animate-pulse" />
             <img
               src="/logo.jpg"
-              alt="Sensory Play Zone Logo"
+              alt="Bambinos Logo"
               width={300}
               height={300}
               className="relative rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500"
@@ -26,7 +28,7 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          Sensory Play Zone
+          Bambinos
         </h1>
 
         <p className="text-2xl md:text-3xl text-gray-500 mb-8 animate-fade-in-up max-w-3xl mx-auto" style={{ animationDelay: "0.4s" }}>

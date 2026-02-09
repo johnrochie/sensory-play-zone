@@ -11,14 +11,14 @@ export default function Nav() {
               <div className="absolute -inset-1 bg-gradient-to-br from-pink-400 to-yellow-400 rounded-full blur-sm opacity-50" />
               <Image
                 src="/logo.jpg"
-                alt="Sensory Play Zone"
+                alt="Bambinos"
                 width={50}
                 height={50}
                 className="relative rounded-xl shadow-lg"
               />
             </div>
             <span className="font-display font-bold text-xl hidden sm:block bg-gradient-to-r from-pink-400 via-yellow-400 to-cyan-400 bg-clip-text text-transparent">
-              Sensory Play Zone
+              Bambinos
             </span>
           </div>
 
